@@ -8,7 +8,7 @@
     tools:context=".Selection">
 
 
-    
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,6 +28,261 @@
                 android:layout_width="match_parent"
                  android:layout_height="wrap_content"
                  android:orientation="vertical">
+
+                     <RadioGroup
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent"
+                         android:orientation="vertical">
+
+                     <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:orientation="horizontal">
+
+                         <ImageView
+                             android:layout_width="60dp"
+                             android:layout_height="60dp"
+                             android:src="@drawable/dump"/>
+
+                         <TextView
+                             android:layout_width="wrap_content"
+                             android:layout_height="match_parent"
+                             android:text=" Tonald Dump: Make America great again by knocking out this loser!"
+                             android:textSize="20sp" />
+                     </LinearLayout>
+
+                         <RadioButton
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_gravity="center" />
+
+                         <View
+                             android:layout_width="match_parent"
+                             android:layout_height="2dp"
+                             android:background="@color/blue">
+                             </View>
+
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:orientation="horizontal">
+
+                             <ImageView
+                                 android:layout_width="60dp"
+                                 android:layout_height="60dp"
+                                 android:src="@drawable/dump"/>
+
+                             <TextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="match_parent"
+                                 android:text=" Tonald Dump: Make America great again by knocking out this loser!"
+                                 android:textSize="20sp" />
+                         </LinearLayout>
+
+                         <RadioButton
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_gravity="center" />
+
+                         <View
+                             android:layout_width="match_parent"
+                             android:layout_height="2dp"
+                             android:background="@color/blue"></View>
+
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:orientation="horizontal">
+
+                             <ImageView
+                                 android:layout_width="60dp"
+                                 android:layout_height="60dp"
+                                 android:src="@drawable/dump"/>
+
+                             <TextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="match_parent"
+                                 android:text=" Tonald Dump: Make America great again by knocking out this loser!"
+                                 android:textSize="20sp" />
+                         </LinearLayout>
+
+                         <RadioButton
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_gravity="center" />
+
+                         <View
+                             android:layout_width="match_parent"
+                             android:layout_height="2dp"
+                             android:background="@color/blue"></View>
+
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:orientation="horizontal">
+
+                             <ImageView
+                                 android:layout_width="60dp"
+                                 android:layout_height="60dp"
+                                 android:src="@drawable/dump"/>
+
+                             <TextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="match_parent"
+                                 android:text=" Tonald Dump: Make America great again by knocking out this loser!"
+                                 android:textSize="20sp" />
+                         </LinearLayout>
+
+                         <RadioButton
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_gravity="center" />
+
+                         <View
+                             android:layout_width="match_parent"
+                             android:layout_height="2dp"
+                             android:background="@color/blue"></View>
+
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:orientation="horizontal">
+
+                             <ImageView
+                                 android:layout_width="60dp"
+                                 android:layout_height="60dp"
+                                 android:src="@drawable/dump"/>
+
+                             <TextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="match_parent"
+                                 android:text=" Tonald Dump: Make America great again by knocking out this loser!"
+                                 android:textSize="20sp" />
+                         </LinearLayout>
+
+                         <RadioButton
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_gravity="center" />
+
+                         <View
+                             android:layout_width="match_parent"
+                             android:layout_height="2dp"
+                             android:background="@color/blue"></View>
+
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:orientation="horizontal">
+
+                             <ImageView
+                                 android:layout_width="60dp"
+                                 android:layout_height="60dp"
+                                 android:src="@drawable/dump"/>
+
+                             <TextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="match_parent"
+                                 android:text=" Tonald Dump: Make America great again by knocking out this loser!"
+                                 android:textSize="20sp" />
+                         </LinearLayout>
+
+                         <RadioButton
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_gravity="center" />
+
+                         <View
+                             android:layout_width="match_parent"
+                             android:layout_height="2dp"
+                             android:background="@color/blue"></View>
+
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:orientation="horizontal">
+
+                             <ImageView
+                                 android:layout_width="60dp"
+                                 android:layout_height="60dp"
+                                 android:src="@drawable/dump"/>
+
+                             <TextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="match_parent"
+                                 android:text=" Tonald Dump: Make America great again by knocking out this loser!"
+                                 android:textSize="20sp" />
+                         </LinearLayout>
+
+                         <RadioButton
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_gravity="center" />
+
+                         <View
+                             android:layout_width="match_parent"
+                             android:layout_height="2dp"
+                             android:background="@color/blue"></View>
+
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:orientation="horizontal">
+
+                             <ImageView
+                                 android:layout_width="60dp"
+                                 android:layout_height="60dp"
+                                 android:src="@drawable/dump"/>
+
+                             <TextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="match_parent"
+                                 android:text=" Tonald Dump: Make America great again by knocking out this loser!"
+                                 android:textSize="20sp" />
+                         </LinearLayout>
+
+                         <RadioButton
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_gravity="center" />
+
+                         <View
+                             android:layout_width="match_parent"
+                             android:layout_height="2dp"
+                             android:background="@color/blue"></View>
+
+                         <LinearLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:orientation="horizontal">
+
+                             <ImageView
+                                 android:layout_width="60dp"
+                                 android:layout_height="60dp"
+                                 android:src="@drawable/dump"/>
+
+                             <TextView
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="match_parent"
+                                 android:text=" Tonald Dump: Make America great again by knocking out this loser!"
+                                 android:textSize="20sp" />
+                         </LinearLayout>
+
+                         <RadioButton
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_gravity="center" />
+
+                         <View
+                             android:layout_width="match_parent"
+                             android:layout_height="2dp"
+                             android:background="@color/blue"></View>
+
+
+
+
+                     </RadioGroup>
+
 
 
 
