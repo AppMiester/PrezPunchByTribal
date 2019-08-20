@@ -9,8 +9,22 @@
 
     <ImageView
         android:id="@+id/victim"
-        android:layout_width="200dp"
+        android:layout_width="195dp"
         android:layout_height="200dp"
-        android:src="@drawable/dump"/>
+        android:layout_centerHorizontal="true"
+
+        android:src="@drawable/dump" />
+
+
+    <ImageView
+        android:id="@+id/glove"
+        android:layout_width="195dp"
+        android:layout_height="218dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:src="@drawable/glove1"
+        android:onClick="punch"/>
+
 
 </RelativeLayout>
