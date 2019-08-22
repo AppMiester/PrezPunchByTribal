@@ -1,11 +1,9 @@
 package tribalway.prezpunchby.com.prezpunchbytribal;
 
+import android.content.Intent;
 import android.graphics.Point;
-import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
-import android.os.CountDownTimer;
 import android.os.Handler;
-import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Display;
@@ -21,13 +19,15 @@ public class Punch extends AppCompatActivity {
     static int amount = 0;
     int punchCount= 0;
     MediaPlayer punchSound;
-    MediaPlayer trumpPain;
+    MediaPlayer pain;
+    MediaPlayer make;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_punch);
         setVictim(Selection.prez);
+        setVisibilty(false);
 
     }
 
@@ -39,7 +39,7 @@ public class Punch extends AppCompatActivity {
 
             case R.id.dump:
                 victim.setImageResource(R.drawable.dump);
-                MediaPlayer make = MediaPlayer.create(this, R.raw.makeamericagreat);
+                 make = MediaPlayer.create(this, R.raw.makeamericagreat);
                 make.start();
                 if (!make.isPlaying())
                     make.release();
@@ -55,37 +55,56 @@ public class Punch extends AppCompatActivity {
 
     public void punch(View view) {
 
+
+
         if(punchSound != null){
             punchSound.release();
         }
-        ImageView victim = (ImageView) findViewById(R.id.victim);
-
-        victimHeight = victim.getHeight();
-
-        Display display = getWindowManager().getDefaultDisplay();
-        Point size = new Point();
-        display.getSize(size);
-
-        int screenHeight = size.y;
-
-        ViewGroup.MarginLayoutParams viewParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-
-        amount = screenHeight - (viewParams.bottomMargin + victimHeight);
-        viewParams.setMargins(viewParams.leftMargin, viewParams.topMargin, viewParams.rightMargin, viewParams.bottomMargin + amount/2);
-        view.setLayoutParams(viewParams);
-
-        viewParams.setMargins(viewParams.leftMargin, viewParams.topMargin, viewParams.rightMargin, viewParams.bottomMargin + amount/2);
-        view.setLayoutParams(viewParams);
-
-        punchSound = MediaPlayer.create(this, R.raw.punchsound);
-        punchSound.start();
-
-        punchCount++;
-        showDamage();
 
 
+        if(!make.isPlaying() && punchCount <35) {
 
-        new Handler().postDelayed(new PunchDown(view, viewParams), 150);
+            ImageView victim = (ImageView) findViewById(R.id.victim);
+
+            victimHeight = victim.getHeight();
+
+            Display display = getWindowManager().getDefaultDisplay();
+            Point size = new Point();
+            display.getSize(size);
+
+            int screenHeight = size.y;
+
+            ViewGroup.MarginLayoutParams viewParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+
+            amount = screenHeight - (viewParams.bottomMargin + victimHeight);
+            viewParams.setMargins(viewParams.leftMargin, viewParams.topMargin, viewParams.rightMargin, viewParams.bottomMargin + amount / 2);
+            view.setLayoutParams(viewParams);
+
+            PunchDown halfStep = new PunchDown(view, viewParams) {
+                @Override
+                public void run() {
+                    params.setMargins(params.leftMargin, params.topMargin, params.rightMargin, params.bottomMargin + amount / 2);
+                    gloveView.setLayoutParams(params);
+                }
+
+            };
+
+            new Handler().postDelayed(halfStep, 80);
+
+
+            punchSound = MediaPlayer.create(this, R.raw.punchsound);
+            punchSound.start();
+
+            punchCount++;
+            showDamage();
+
+
+            new Handler().postDelayed(new PunchDown(view, viewParams), 150);
+        }
+
+        if(punchCount >34){
+            setVisibilty(true);
+        }
 
     }
 
@@ -98,16 +117,16 @@ public class Punch extends AppCompatActivity {
             case 10:
                 if(Selection.prez == R.id.dump){
                     victim.setImageResource(R.drawable.dump1);
-                    trumpPain = MediaPlayer.create(this, R.raw.dumppain);
-                    trumpPain.start();
+                    pain = MediaPlayer.create(this, R.raw.dumppain);
+                    pain.start();
                     break;
                 }
 
             case 20:
                 if(Selection.prez == R.id.dump){
-                    trumpPain.start();
+                    pain.start();
                     victim.setImageResource(R.drawable.dump2);
-                    
+
                     break;
                 }
 
@@ -115,9 +134,9 @@ public class Punch extends AppCompatActivity {
                 if(Selection.prez == R.id.dump){
 
                     victim.setImageResource(R.drawable.dump3);
-                    trumpPain.start();
-                    trumpPain = MediaPlayer.create(this,R.raw.dumppess );
-                    trumpPain.start();
+                    pain.start();
+                    pain = MediaPlayer.create(this,R.raw.dumppess );
+                    pain.start();
 
                     break;
                     }
@@ -126,6 +145,23 @@ public class Punch extends AppCompatActivity {
                 }
         }
 
+
+        public void setVisibilty(boolean ViewVisible){
+
+        View view = (View) findViewById(R.id.returnToMenu);
+
+        if(!ViewVisible){
+            view.setVisibility(View.GONE);
+        }else{
+            view.setVisibility(View.VISIBLE);
+            }
+        }
+
+        public void returnToMenu(View view){
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        }
 
 
 
