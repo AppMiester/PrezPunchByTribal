@@ -1,15 +1,21 @@
 package tribalway.prezpunchby.com.prezpunchbytribal;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Point;
 import android.media.MediaPlayer;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Punch extends AppCompatActivity {
@@ -18,19 +24,26 @@ public class Punch extends AppCompatActivity {
     static int victimHeight = 0;
     static int amount = 0;
     int punchCount= 0;
+    boolean hasSavedRan = false;
     MediaPlayer punchSound;
     MediaPlayer pain;
     MediaPlayer make;
+
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_punch);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        context = this;
+
+        stopService(MainActivity.music);
+
         setVictim(Selection.prez);
         setVisibilty(false);
 
     }
-
     public void setVictim(int prez) {
 
         ImageView victim = (ImageView) findViewById(R.id.victim);
@@ -102,8 +115,9 @@ public class Punch extends AppCompatActivity {
             new Handler().postDelayed(new PunchDown(view, viewParams), 150);
         }
 
-        if(punchCount >34){
+        if(punchCount == 35){
             setVisibilty(true);
+            saveScore();
         }
 
     }
@@ -161,6 +175,30 @@ public class Punch extends AppCompatActivity {
 
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        }
+
+
+        public void saveScore(){
+
+
+             if(!hasSavedRan) {
+                 List<Integer> scores = Utility.loadScores(context);
+                 Log.e("score", String.valueOf(scores.get(0)));
+
+                 switch (Selection.prez) {
+
+                     case R.id.dump:
+                         Integer temp = scores.get(0);
+                         temp++;
+                         Log.e("score", "temp value " + String.valueOf(temp));
+                         scores.set(0, temp);
+
+                         Log.e("score", " before saving " + String.valueOf(scores.get(0)));
+                         Utility.saveScores(context, scores);
+                         hasSavedRan = true;
+                 }
+             }
+             Selection.prez = 0;
         }
 
 
